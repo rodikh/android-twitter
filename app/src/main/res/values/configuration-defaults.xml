@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="twitter_secret">xxx</string>
+    <string name="twitter_key">yyy</string>
+</resources>
