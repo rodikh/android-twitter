@@ -18,11 +18,9 @@ import java.util.List;
 
 public class FeedActivity extends ListActivity {
 
-    TwitterManager twitterManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        twitterManager = new TwitterManager(FeedActivity.this);
+        TwitterManager twitterManager = new TwitterManager(FeedActivity.this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
@@ -65,12 +63,6 @@ public class FeedActivity extends ListActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 }

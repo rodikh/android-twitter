@@ -18,10 +18,10 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * Created by rodik on 8/30/15.
+ * Created by rodik on 8/30/15
  */
 public class TweetAdapter extends BaseAdapter {
-    private LayoutInflater inflater;
+    private final LayoutInflater inflater;
     private List<Tweet> data;
 
 
@@ -59,7 +59,7 @@ public class TweetAdapter extends BaseAdapter {
         return this.bindData(view, tweet);
     }
 
-    public View bindData(View view, Tweet tweet) {
+    private View bindData(View view, Tweet tweet) {
         View viewElement = view.findViewById(R.id.name);
         TextView tv = (TextView)viewElement;
         tv.setText(tweet.user.name);
@@ -91,10 +91,10 @@ public class TweetAdapter extends BaseAdapter {
         }
 
         protected Bitmap doInBackground(String... urls) {
-            String urldisplay = urls[0];
+            String urlDisplay = urls[0];
             Bitmap mIcon11 = null;
             try {
-                InputStream in = new java.net.URL(urldisplay).openStream();
+                InputStream in = new java.net.URL(urlDisplay).openStream();
                 mIcon11 = BitmapFactory.decodeStream(in);
             } catch (Exception e) {
                 Log.e("Error", e.getMessage());

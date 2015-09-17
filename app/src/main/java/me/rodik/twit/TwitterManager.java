@@ -12,7 +12,7 @@ import com.twitter.sdk.android.tweetui.UserTimeline;
 import io.fabric.sdk.android.Fabric;
 
 /**
- * Created by rodik on 8/25/15.
+ * Created by rodik on 8/25/15
  */
 public class TwitterManager {
 
