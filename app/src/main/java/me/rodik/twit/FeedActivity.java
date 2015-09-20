@@ -3,9 +3,11 @@ package me.rodik.twit;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.twitter.sdk.android.core.Callback;
@@ -17,10 +19,11 @@ import com.twitter.sdk.android.tweetui.TimelineResult;
 import java.util.List;
 
 public class FeedActivity extends ListActivity {
+    public static List<Tweet> items;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TwitterManager twitterManager = new TwitterManager(FeedActivity.this);
+        TwitterManager twitterManager = new TwitterManager(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
@@ -35,7 +38,7 @@ public class FeedActivity extends ListActivity {
             @Override
             public void success(Result<TimelineResult<Tweet>> result) {
                 findViewById(R.id.loading_spinner).setVisibility(View.GONE);
-                List<Tweet> items = result.data.items;
+                items = result.data.items;
                 if (items.isEmpty()) {
                     findViewById(android.R.id.empty).setVisibility(View.VISIBLE);
                 } else {
@@ -65,4 +68,13 @@ public class FeedActivity extends ListActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Log.d("Feed", "Item Click!");
+        Intent i = new Intent(this, TweetActivity.class);
+        i.putExtra(getString(R.string.item_id), position);
+        startActivity(i);
+    }
+
 }

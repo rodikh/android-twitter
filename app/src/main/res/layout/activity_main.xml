@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/feed"
-            android:onClick="sendMessage"/>
+            android:onClick="openFeed"/>
     </LinearLayout>
 
     <TextView
@@ -30,19 +30,19 @@
         android:text="\@RodikTries"
         android:tag="link"
         android:textColor="#2222ee"
-        android:onClick="sendMessage"/>
+        android:onClick="openFeed"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="\@Chegg"
         android:tag="link"
         android:textColor="#2222ee"
-        android:onClick="sendMessage"/>
+        android:onClick="openFeed"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="\@WitcherGame"
         android:tag="link"
         android:textColor="#2222ee"
-        android:onClick="sendMessage" />
+        android:onClick="openFeed" />
 </LinearLayout>

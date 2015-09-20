@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void sendMessage(View view) {
+    public void openFeed(View view) {
         Intent intent = new Intent(this, FeedActivity.class);
         String message;
         if (view.getTag() != null && view.getTag().toString().equals("link")) {

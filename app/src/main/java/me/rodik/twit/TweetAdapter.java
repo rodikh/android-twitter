@@ -56,10 +56,10 @@ public class TweetAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        return this.bindData(view, tweet);
+        return bindData(view, tweet);
     }
 
-    private View bindData(View view, Tweet tweet) {
+    public static View bindData(View view, Tweet tweet) {
         View viewElement = view.findViewById(R.id.name);
         TextView tv = (TextView)viewElement;
         tv.setText(tweet.user.name);
@@ -83,7 +83,8 @@ public class TweetAdapter extends BaseAdapter {
         return view;
     }
 
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+
+    public static class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
         public DownloadImageTask(ImageView bmImage) {

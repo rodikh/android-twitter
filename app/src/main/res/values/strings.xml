@@ -9,4 +9,7 @@
     <string name="twitter_username">Twitter Username</string>
     <string name="feed">Feed</string>
     <string name="try_these_accounts">Try these Accounts:</string>
+    <string name="storyId">storyId</string>
+    <string name="title_activity_tweet">TweetActivity</string>
+    <string name="item_id">item_id</string>
 </resources>
